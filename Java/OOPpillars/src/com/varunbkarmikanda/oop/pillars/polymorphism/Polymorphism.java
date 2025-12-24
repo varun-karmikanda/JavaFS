@@ -31,6 +31,12 @@ public class Polymorphism {
 
         Dog myDog = (Dog) dog;
 
+
+        // When the reference is of the Parent type and if the child has new method that is not in parent then we can access it
+
+//        dog.sayBye();
+        ((Dog) dog).sayBye();
+
     }
 
 }
