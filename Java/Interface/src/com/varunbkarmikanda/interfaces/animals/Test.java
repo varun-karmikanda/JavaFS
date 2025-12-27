@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.interfaces.test;
+package com.varunbkarmikanda.interfaces.animals;
 
 public class Test {
     public static void main(String[] args){
