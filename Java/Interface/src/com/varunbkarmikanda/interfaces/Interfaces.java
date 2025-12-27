@@ -15,4 +15,12 @@ public class Interfaces {
     // accessed via the implementation class objects
 
 
+    // Abstract classes V/S Interfaces
+
+    // Abstract classes: It has instance variables and has constructors for initialization
+
+    // A class can extends only 1 abstract class
+    // A class can implements multiple interfaces
+
+
 }
