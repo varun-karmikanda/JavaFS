@@ -13,4 +13,9 @@ public interface Animal {
         System.out.println("This is an Animal interface!");
     }
 
+    public default void run(){
+        this.eat();
+        System.out.println("Animal is running!");
+    }
+
 }
