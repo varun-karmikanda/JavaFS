@@ -22,5 +22,15 @@ public class Interfaces {
     // A class can extends only 1 abstract class
     // A class can implements multiple interfaces
 
+    // An interface can have
+    // 1. Constants
+    // 2. Abstract methods
+    // 3. static methods
+    // 4. default methods
+
+    // Why
+    // 1. multiple inheritance
+    // 2. abstraction
+
 
 }
