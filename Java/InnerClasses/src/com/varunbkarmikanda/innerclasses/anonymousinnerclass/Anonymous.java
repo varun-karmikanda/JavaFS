@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.innerclasses;
+package com.varunbkarmikanda.innerclasses.anonymousinnerclass;
 
 public class Anonymous {
 
