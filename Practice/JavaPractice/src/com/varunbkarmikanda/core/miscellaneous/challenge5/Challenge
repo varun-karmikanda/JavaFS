@@ -1,0 +1,10 @@
+Challenge 5: The "Type-Safe" Logger (Enums & Static)
+Since you now understand type-checking, let's look at Enums and Static methods—the last two big concepts on your list.
+
+Scenario: You need a central Logger utility. It should only allow specific "Log Levels" (INFO, WARNING, ERROR) to prevent developers from typing random strings.
+
+Task:
+
+Create an Enum called LogLevel.
+
+Create a static method that takes the level and a message.
