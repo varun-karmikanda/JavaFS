@@ -1,0 +1,27 @@
+Challenge 2: The Resilient File Processor
+Scenario: You are reading a massive configuration file. If the file is missing, you must log it and "fall back" to a default configuration so the app doesn't crash. You must also ensure the Scanner or FileReader is closed to prevent Memory Leaks.
+
+Task: Use try-catch-finally or try-with-resources.
+
+
+import java.util.*;
+import java.io.*;
+
+public class ConfigLoader {
+    public void loadConfig(String path) {
+        try {
+            // Simulate reading a file that might not exist
+            File file = new File(path);
+            Scanner reader = new Scanner(file);
+            while (reader.hasNextLine()) {
+                System.out.println(reader.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            // 1. Log a custom error message
+            // 2. Trigger a "Fallback" logic here
+        } finally {
+            // 3. Ensure the reader is closed here if not using try-with-resources
+            System.out.println("Cleaning up resources...");
+        }
+    }
+}
