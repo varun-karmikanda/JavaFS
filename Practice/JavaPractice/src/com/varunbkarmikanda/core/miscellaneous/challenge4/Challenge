@@ -1,0 +1,40 @@
+Challenge 4: The "Memory-Safe" Data Processor (Recursion & Arrays)
+Since you’ve mastered the basics, let’s tackle the last two concepts from your list: Recursion and Arrays.
+
+Scenario: You are building a "Deep Search" tool for a file system. You need to find a specific "Target ID" inside a nested array structure (representing folders).
+
+The Catch: If the nesting is too deep, recursion can cause a StackOverflowError. You must implement a solution that is safe.
+
+Task: Complete the search method. Use your Arrays knowledge to traverse and Recursion to go deep, but add a "Depth Limit" to prevent crashes.
+
+
+public class DeepSearcher {
+
+    private static final int MAX_DEPTH = 1000; // Industry standard: prevent stack overflow
+
+    /**
+     * @param folderStructure An array where elements could be Strings (file names)
+     * or other Object[] arrays (sub-folders).
+     * @param target The file name we are looking for.
+     * @param currentDepth Current recursion level.
+     */
+    public boolean findFile(Object[] folderStructure, String target, int currentDepth) {
+        // 1. BASE CASE: If depth exceeds MAX_DEPTH, return false to save the stack.
+
+        // 2. LOOP: Iterate through the folderStructure array.
+
+        // 3. LOGIC:
+        //    - If the element is a String and equals target, return true.
+        //    - If the element is an Object[], call findFile RECURSIVELY.
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        // Mock Data: Folders inside folders
+        Object[] nestedFolders = { "image.jpg", new Object[]{ "secret.txt", "data.csv" }, "notes.pdf" };
+
+        DeepSearcher searcher = new DeepSearcher();
+        System.out.println("Found: " + searcher.findFile(nestedFolders, "secret.txt", 0));
+    }
+}
