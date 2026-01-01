@@ -1,0 +1,17 @@
+Challenge 1: The Immutable Security Audit
+Scenario: In a fintech app, once a SecurityLog is created, it must never be changed. If a developer tries to modify the timestamp or the event message, the code shouldn't even compile.
+
+Task: Complete the class using final and proper encapsulation.
+
+
+public class SecurityLog {
+    // 1. Make these variables impossible to change after the constructor runs
+    private String eventName;
+    private long timestamp;
+
+    public SecurityLog(String eventName, long timestamp) {
+        // 2. Initialize them here
+    }
+
+    // 3. Create only GETTERS. Should you create SETTERS? (Think: Industry standards)
+}
