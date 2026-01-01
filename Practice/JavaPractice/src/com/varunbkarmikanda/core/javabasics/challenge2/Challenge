@@ -1,0 +1,43 @@
+================================================================================
+CHALLENGE 2: HARD MODE - DATA PIPELINE & NUMERIC PROMOTION
+================================================================================
+
+PART A: FINANCIAL TRUNCATION LOGIC
+1. Variables: 
+   - double accountBalance = 50000.99
+   - float monthlyInterest = 0.05f
+2. Logic: 
+   - Calculate: currentBalance = accountBalance + (accountBalance * monthlyInterest)
+   - Store the "whole dollar" amount in a long variable (use narrowing casting).
+3. The Goal: 
+   - Print a "Data Loss Warning" ONLY if the decimal amount lost during 
+     casting is greater than 0.50. 
+     (e.g., if 10.75 becomes 10, loss is 0.75 -> Print Warning).
+
+--------------------------------------------------------------------------------
+
+PART B: THE CHAR-INT SYNERGY
+1. Variables: 
+   - char secretGrade = 'A'
+2. Logic: 
+   - Use a mathematical operation on 'secretGrade' to find and print the 
+     next 2 characters in the sequence (B and C) WITHOUT hardcoding them.
+3. The Goal: 
+   - Take the integer 100, cast it back to a char, and print it. 
+   - Comment in your code WHY '100' results in the character 'd'.
+
+--------------------------------------------------------------------------------
+
+PART C: THE NUMERIC PROMOTION TRAP (CRITICAL)
+1. Variables: 
+   - int a = 2_000_000_000
+   - int b = 2_000_000_000
+2. The Buggy Code: 
+   - long result = a * b;
+   - System.out.println(result); // This will print a garbage negative value.
+3. The Goal: 
+   - Fix this line so 'result' holds the mathematically correct 4 billion billion.
+   - Requirement: You cannot change 'a' and 'b' to longs initially. You must 
+     fix it within the calculation line.
+
+================================================================================
