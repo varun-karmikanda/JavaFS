@@ -1,0 +1,22 @@
+Challenge 3: Polymorphic Notification Engine
+Scenario: Your company sends alerts via Email and SMS. Next month, they want to add WhatsApp. If you use if/else checks, you'll have to rewrite your whole app later.
+
+Task: Use an Interface to make the NotificationManager "plugin-based."
+
+
+// 1. Create an interface named 'MessageService' with a method 'send(String msg)'
+
+class EmailService implements MessageService {
+    public void send(String msg) { System.out.println("Sending Email: " + msg); }
+}
+
+class SMSService implements MessageService {
+    public void send(String msg) { System.out.println("Sending SMS: " + msg); }
+}
+
+public class NotificationManager {
+    // 2. This method should take the INTERFACE as a parameter, not the specific class
+    public void processAlert(MessageService service, String message) {
+        service.send(message);
+    }
+}
