@@ -1,0 +1,16 @@
+Challenge 1: The "Digital Receipt" (Memory Management)
+In the industry, we rarely just print "Hello World." We process data. This task tests your ability to choose the correct data type for the job (precision vs. memory).
+
+The Task: Create a program that stores and displays details for a high-end electronic item.
+
+Item Name: String
+
+Quantity: int (or short?)
+
+Price per unit: double (or float?)
+
+Is in stock: boolean
+
+Energy Rating: char (e.g., 'A', 'B', 'C')
+
+Implementation Goal: Calculate the total cost (Price × Quantity) and print a formatted receipt.
