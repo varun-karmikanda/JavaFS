@@ -1,0 +1,13 @@
+================================================================================
+CHALLENGE 1: THE "SECURE DATA MASKER" (Strings & Characters)
+================================================================================
+Context: Protecting Sensitive Personal Information (SPI).
+1. Create a class 'DataProcessor'.
+2. Method: 'maskCreditCard(String cardNumber)'
+3. Logic:
+   - Accept a string of 16 digits.
+   - Use 'StringBuilder' (for efficiency) to replace the first 12 digits with 'X'.
+   - Keep the last 4 digits visible.
+   - Requirement: If the input isn't exactly 16 digits, return "Invalid Card".
+4. Goal: Demonstrate the difference between 'String' (immutable) and
+   'StringBuilder' (mutable).

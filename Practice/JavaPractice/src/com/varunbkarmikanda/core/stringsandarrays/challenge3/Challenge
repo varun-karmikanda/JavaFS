@@ -1,0 +1,19 @@
+================================================================================
+CHALLENGE 3: THE "WAREHOUSE SEARCH" (2D Arrays)
+================================================================================
+1. Create a class 'WarehouseManager'.
+2. Method: void locateProduct(int[][] grid, int targetID)
+3. The Setup:
+   - Your grid represents 3 aisles (rows) with 3 shelves (columns) each.
+   - Example Grid:
+     { {101, 102, 103},
+       {201, 202, 203},
+       {301, 302, 303} }
+4. The Logic:
+   - Use nested 'for' loops to search every slot.
+   - If 'targetID' is found:
+     Print: "Product found at Aisle [row] Slot [col]".
+     Use 'return' or a labeled 'break' to stop searching immediately.
+   - If the loops finish and nothing is found:
+     Print: "Error: Product ID [id] not in inventory".
+================================================================================

@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 2: THE "STOCK TICKER" ANALYZER (Stateful approach)
+================================================================================
+1. Create a class: 'StockAnalyzer'.
+2. Constructor: Accepts a 'double[] prices'.
+3. Method: 'public void displayAnalysis()'
+4. Requirements:
+   - Handle edge cases: If the array is null or empty, print a message and return.
+   - Use ONE 'for' loop (Standard or Enhanced for-each).
+   - Inside that one loop, calculate:
+     * The highest price.
+     * The lowest price.
+     * The sum of all prices.
+5. Calculation: After the loop, divide the sum by 'prices.length' for the average.
+6. Test Data: {150.5, 148.2, 155.0, 140.0, 162.4, 158.9, 151.2}
+================================================================================
