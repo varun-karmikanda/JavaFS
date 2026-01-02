@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 3: THE SECURE TERMINAL (Switch & Do-While)
+================================================================================
+Context: Simulating a command-line interface with a retry limit.
+1. Use a 'do-while' loop to keep a menu active.
+2. Use a 'Scanner' to take user input (1-4).
+3. Logic:
+   - Use a 'switch' statement to handle choices.
+   - Case 1: Print "Checking System...".
+   - Case 2: Print "Updating Logs...".
+   - Case 3: Print "Secure Exit Selected".
+   - Default: Increment a 'wrongAttempts' counter.
+4. The Twist:
+   - If 'wrongAttempts' reaches 3, use 'break' to force-close the loop.
+   - Print "System Locked: Too many invalid attempts" only if the loop
+     closed due to errors.

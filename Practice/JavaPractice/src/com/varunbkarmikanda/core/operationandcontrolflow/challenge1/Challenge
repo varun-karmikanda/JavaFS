@@ -1,0 +1,12 @@
+================================================================================
+CHALLENGE 1: THE BITWISE PERMISSION SYSTEM (Operations)
+================================================================================
+Context: In high-performance systems, we store multiple settings in one 'int'.
+1. Define 4 constants using Bit-Shifting (<<):
+   - READ (bit 0), WRITE (bit 1), EXECUTE (bit 2), DELETE (bit 3).
+2. Create a class 'PermissionManager':
+   - Method 'grantPermission(int current, int newBit)': Use OR (|) to add.
+   - Method 'revokePermission(int current, int bit)': Use AND/NOT (& ~) to remove.
+   - Method 'check(int current, int bit)': Use AND (&) to return a boolean.
+3. Goal: Start with 0. Add READ and WRITE. Check if EXECUTE is present.
+   Then revoke WRITE and check again.
