@@ -1,0 +1,8 @@
+================================================================================
+CHALLENGE 3: THE PASS-BY-VALUE TEST (Memory Logic)
+================================================================================
+Context: Understanding how Java passes data to methods.
+1. Create a method 'changeValue(int x)'. Inside, do 'x = 100;'.
+2. Create a method 'changeName(User u)'. Inside, do 'u.setName("Changed");'.
+3. Task: In your Main method, call both and see which one actually changed
+   the original variable.

@@ -1,0 +1,14 @@
+================================================================================
+CHALLENGE 1: THE SMART ACCOUNT (Encapsulation & Validation)
+================================================================================
+Context: A Bank Account that protects itself from bad data.
+1. Create a class 'BankAccount'.
+2. Private Fields: 'String accountHolder', 'double balance'.
+3. Constructor: Sets the holder name and initial balance.
+4. Encapsulation:
+   - Provide a Getter for 'balance', but NO Setter. (Why? Because balance 
+     should only change via specific actions).
+5. Methods:
+   - 'deposit(double amount)': Only allow if amount > 0.
+   - 'withdraw(double amount)': Only allow if amount > 0 AND amount <= balance.
+6. Goal: Print an error message if someone tries to withdraw more than they have.

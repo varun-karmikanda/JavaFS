@@ -1,0 +1,10 @@
+================================================================================
+CHALLENGE 2: THE FLEXIBLE MESSENGER (Method Overloading)
+================================================================================
+Context: A notification system that handles different data types.
+1. Create a class 'NotificationService'.
+2. Method Overloading: Create three versions of 'sendNotification':
+   - Version 1: Accepts (String message) -> Prints: "Alert: [message]"
+   - Version 2: Accepts (String message, int priority) -> Prints: "P[priority] Alert: [message]"
+   - Version 3: Accepts (String[] messages) -> Uses a loop to print all messages.
+3. Goal: Show how the same method name can behave differently based on parameters.
