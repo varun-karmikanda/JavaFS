@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 4: THE HIERARCHICAL PAYMENT SYSTEM (Inheritance)
+================================================================================
+Context: A store that accepts different payment methods.
+1. Create a Base Class: 'PaymentMethod'.
+   - Field: 'double amount'
+   - Method: 'processPayment()' -> Prints: "Processing generic payment..."
+2. Create Subclass 1: 'CreditCardPayment'.
+   - Field: 'String cardNumber'
+   - Override 'processPayment()' -> Prints: "Charging $X to Card [Last 4 digits]"
+3. Create Subclass 2: 'UPIPayment'.
+   - Field: 'String upiId'
+   - Override 'processPayment()' -> Prints: "Requesting $X from UPI ID [ID]"
+4. The Goal: In your Main class, create an array of 'PaymentMethod' containing
+   both types. Loop through them and call 'processPayment()'.
+================================================================================
