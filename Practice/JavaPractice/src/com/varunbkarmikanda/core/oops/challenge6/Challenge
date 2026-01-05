@@ -1,0 +1,10 @@
+================================================================================
+CHALLENGE 6: POLYMORPHISM IN ACTION (The Method Overriding Boss)
+================================================================================
+Context: Dynamic behavior at runtime.
+1. Create a method 'executePayment(PaymentMethod p)'.
+2. Inside, call 'p.processPayment()'.
+3. Task: Pass a 'CreditCardPayment' object into this method.
+4. The Question: Even though the parameter type is 'PaymentMethod', which
+   version of the method actually runs? (Hint: This is the soul of Java).
+================================================================================
