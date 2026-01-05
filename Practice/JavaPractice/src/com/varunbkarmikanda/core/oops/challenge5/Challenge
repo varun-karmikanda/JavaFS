@@ -1,0 +1,10 @@
+================================================================================
+CHALLENGE 5: THE "SUPER" CONSTRUCTOR (Constructors in Inheritance)
+================================================================================
+Context: Ensuring data flows from Child to Parent correctly.
+1. Base Class 'Employee': Has 'name' and 'id'. Constructor initializes both.
+2. Subclass 'Developer': Adds 'programmingLanguage'.
+3. The Goal: Use 'super(name, id)' in the Developer constructor to pass
+   data up to the Employee class.
+4. Requirement: Override 'toString()' in both to show the full data chain.
+================================================================================
