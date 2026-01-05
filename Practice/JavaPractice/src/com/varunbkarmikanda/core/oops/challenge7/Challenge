@@ -1,0 +1,17 @@
+================================================================================
+CHALLENGE 7: THE UNIVERSAL REMOTE (Interfaces)
+================================================================================
+1. Create an Interface: 'Operatable'
+   - Methods: 'void turnOn()', 'void turnOff()'
+2. Create Class 'Television': Implement 'Operatable'.
+   - Add 'changeChannel(int channel)'.
+3. Create Class 'SmartLight': Implement 'Operatable'.
+   - Add 'adjustBrightness(int level)'.
+4. The Logic Challenge:
+   - Create a 'List<Operatable>' (or array).
+   - Add a TV and a Light to it.
+   - Loop through and turn them all OFF.
+5. The Twist:
+   - Try to call 'changeChannel()' inside the loop.
+   - Observe why the compiler stops you (Same reason as the Developer/Employee issue!).
+================================================================================
