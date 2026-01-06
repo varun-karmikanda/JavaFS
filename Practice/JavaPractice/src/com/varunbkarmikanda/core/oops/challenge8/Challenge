@@ -1,0 +1,33 @@
+================================================================================
+FINAL PROJECT: SMART HOME MANAGER (GRADUATION LEVEL)
+================================================================================
+
+1. INTERFACE: 'Operatable'
+   - void turnOn();
+   - void turnOff();
+
+2. CLASS: 'Television' implements 'Operatable'
+   - Private Field: int channel;
+   - Method: setChannel(int c) -> Sets the channel and prints a log.
+   - Override 'turnOff()' -> Should print "TV shutting down..."
+
+3. CLASS: 'SmartLight' implements 'Operatable'
+   - Override 'turnOff()' -> Should print "Light fading out..."
+
+4. CLASS: 'SmartHomeHub' (The Brain)
+   - Field: private List<Operatable> devices = new ArrayList<>();
+   - Method: public void addDevice(Operatable d)
+     -> Adds device to list and prints "Device registered."
+   - Method: public void shutDownAll()
+     -> Loop through the List:
+        * IF device IS A Television: Call tv.setChannel(101).
+        * FOR ALL: Call device.turnOff().
+
+5. CLASS: 'Main'
+   - Create Hub.
+   - Add 1 TV and 2 Lights.
+   - Run 'hub.shutDownAll()'.
+
+================================================================================
+GOAL: Demonstrate Polymorphism + List Management + Pattern Matching.
+================================================================================

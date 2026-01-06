@@ -24,6 +24,7 @@ public class Television implements Operatable{
         if(isTelevisionOn){
             System.out.println("Television is already ON!");
         } else {
+            this.isTelevisionOn = true;
             System.out.println("Television turned ON!");
         }
     }
@@ -33,6 +34,7 @@ public class Television implements Operatable{
         if(!isTelevisionOn){
             System.out.println("Television is already OFF!");
         } else {
+            this.isTelevisionOn = false;
             System.out.println("Television turned OFF!");
         }
     }
