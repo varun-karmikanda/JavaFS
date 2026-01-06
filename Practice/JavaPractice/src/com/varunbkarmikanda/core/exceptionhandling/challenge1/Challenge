@@ -1,0 +1,39 @@
+================================================================================
+CHALLENGE: THE ROBUST BANK (EXCEPTION HANDLING)
+================================================================================
+
+1. FILE: 'InsufficientFundsException.java'
+   - Purpose: Custom Checked Exception.
+   - Requirement: Extends 'java.lang.Exception'.
+   - Logic: Constructor must pass 'message' to super().
+
+2. FILE: 'BankAccount.java'
+   - Fields: private double balance.
+   - Constructor: Sets initial balance.
+   - Method: public void withdraw(double amount) throws InsufficientFundsException
+   - Logic:
+     * IF (amount > balance) -> THROW new InsufficientFundsException("...");
+     * ELSE -> balance -= amount;
+
+3. FILE: 'TestBank.java'
+   - Task:
+     * Create account with $100.
+     * TRY to withdraw $150.
+     * CATCH 'InsufficientFundsException'.
+     * Print: "Transaction Denied: " + e.getMessage().
+
+================================================================================
+GOAL: Stop using 'if-else' for errors; use Java's formal Exception engine.
+================================================================================
+
+================================================================================
+CHALLENGE: THE COMPLETER
+================================================================================
+1. Add a 'finally' block to your try-catch in 'Test'.
+2. Logic: Inside 'finally', print "Transaction attempt finished."
+   (This should print whether the withdrawal worked OR failed).
+3. New Logic: Add a check in 'withdraw' to throw an 'IllegalArgumentException'
+   if the 'amount' is negative.
+4. Update 'Test' to catch BOTH 'InsufficientFundsException' and
+   'IllegalArgumentException' in separate catch blocks.
+================================================================================
