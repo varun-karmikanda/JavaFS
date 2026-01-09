@@ -1,0 +1,10 @@
+================================================================================
+CHALLENGE: THE LOG WRITER
+================================================================================
+1. Create a method 'logTransaction(String msg)'.
+2. Inside, use a 'FileWriter' to write the message to a file named "log.txt".
+3. REQUIREMENT: Use "Try-with-Resources" syntax:
+   'try (FileWriter fw = new FileWriter("log.txt", true)) { ... }'
+4. Observation: Notice that you don't need a 'finally' block to close the file!
+   Java closes it automatically even if an exception occurs.
+================================================================================
