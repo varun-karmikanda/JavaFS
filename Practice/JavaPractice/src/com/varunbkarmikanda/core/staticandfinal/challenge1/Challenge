@@ -1,0 +1,22 @@
+================================================================================
+CHALLENGE: STATIC & FINAL (CONFIG MANAGER)
+================================================================================
+
+1. CLASS: 'SystemConfig'
+   - Field: 'public static final String DATABASE_URL = "jdbc:mysql://localhost:3306";'
+   - Field: 'public static int connectionCount = 0;'
+   - Constructor: Every time a new 'SystemConfig' is created, increment 'connectionCount'.
+   - Method: 'public final void showConfig()' -> Print the URL.
+
+2. CLASS: 'DatabaseClient' extends 'SystemConfig'
+   - Task: Try to override 'showConfig()'. (Observation: Notice the compiler error!)
+   - Method: 'public void connect()' -> Print "Connecting to " + DATABASE_URL.
+
+3. TEST CLASS:
+   - Create 3 different 'DatabaseClient' objects.
+   - Print: "Total Connections: " + SystemConfig.connectionCount;
+     (Observation: It should show '3' even though you created separate objects!)
+
+================================================================================
+GOAL: Understand shared memory (static) vs. unchangeable logic (final).
+================================================================================
