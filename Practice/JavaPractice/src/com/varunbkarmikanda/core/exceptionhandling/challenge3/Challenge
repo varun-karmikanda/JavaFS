@@ -1,0 +1,26 @@
+================================================================================
+CHALLENGE: THE SECURITY GATE
+================================================================================
+
+1. FILE: 'SecurityException.java' (Custom Exception)
+   - Extends 'Exception'.
+   - Constructor: Takes (String message, Throwable cause).
+   - Use 'super(message, cause)' to link the original error.
+
+2. FILE: 'Authenticator.java'
+   - Method: 'private void connectToDatabase() throws IOException'
+     -> Simply 'throw new IOException("Server Timed Out");'
+   - Method: 'public void login() throws SecurityException'
+     -> TRY calling 'connectToDatabase()'.
+     -> CATCH 'IOException'.
+     -> THROW a new 'SecurityException', passing the IOException as the 'cause'.
+
+3. FILE: 'TestSecurity.java'
+   - Call 'login()'.
+   - Catch 'SecurityException'.
+   - Print: "High Level Error: " + e.getMessage().
+   - Print: "Root Cause: " + e.getCause();
+
+================================================================================
+GOAL: Master "Exception Chaining" to preserve the history of an error.
+================================================================================
