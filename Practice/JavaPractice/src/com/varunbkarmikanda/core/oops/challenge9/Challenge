@@ -1,0 +1,26 @@
+================================================================================
+CHALLENGE: THE HYBRID ENGINE (Interface Conflict Resolution)
+================================================================================
+
+1. INTERFACE: 'FuelEngine'
+   - Default Method: 'void start()' -> Prints "Combustion engine roaring..."
+   - Default Method: 'void getFuelType()' -> Prints "Uses Petrol/Diesel."
+
+2. INTERFACE: 'ElectricEngine'
+   - Default Method: 'void start()' -> Prints "Electric motor humming..."
+   - Default Method: 'void getFuelType()' -> Prints "Uses Electricity."
+
+3. CLASS: 'HybridCar' implements 'FuelEngine', 'ElectricEngine'
+   - TASK 1: Resolve the conflict for 'start()'.
+     * In the override, call BOTH parent start methods.
+   - TASK 2: Resolve the conflict for 'getFuelType()'.
+     * In the override, print your own message: "This car uses both!"
+
+4. TEST CLASS:
+   - Create a 'HybridCar'.
+   - Call 'start()'.
+   - Call 'getFuelType()'.
+
+================================================================================
+CRITICAL SYNTAX HINT: InterfaceName.super.methodName();
+================================================================================
