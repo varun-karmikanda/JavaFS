@@ -1,0 +1,30 @@
+================================================================================
+CHALLENGE: THE SECURE FACTORY (STATIC INITIALIZATION & INHERITANCE)
+================================================================================
+
+1. CLASS: 'BaseFactory'
+   - Static Field: 'public static String factoryId;'
+   - Static Block:
+     * Initialize 'factoryId' to a random UUID or a hardcoded String (e.g., "FAC-101").
+     * Print: "[BaseFactory] Static block executed: ID Generated."
+   - Static Method: 'public static void getFactoryInfo()'
+     * Print: "Base Factory ID: " + factoryId.
+
+2. CLASS: 'RobotFactory' extends 'BaseFactory'
+   - Static Block:
+     * Print: "[RobotFactory] Static block executed."
+   - Static Method: (Shadowing test)
+     * Create 'public static void getFactoryInfo()' here too.
+     * Print: "Robot Factory ID: " + factoryId.
+
+3. CLASS: 'Main'
+   - Task 1: Call 'RobotFactory.getFactoryInfo()' WITHOUT creating any objects.
+     * Observation: Which static blocks run? Which method runs?
+   - Task 2: Create two 'RobotFactory' objects.
+     * Observation: Does the static block run again? (Spoiler: No!)
+
+================================================================================
+THEORY TEST:
+- Can you use 'super' inside a static method? (Try it and see why it fails!)
+- If you mark a static method as 'final', can the child class "Shadow" it?
+================================================================================
