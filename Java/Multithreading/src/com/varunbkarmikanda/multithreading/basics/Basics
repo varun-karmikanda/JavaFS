@@ -1,0 +1,59 @@
+CPU     ->
+        Brain of the computer, is responsible for executing instructions from programs.
+        Performs basic arithmetic, logical and input/output operation specified by instructions
+        EX: Intel, AMD
+
+CORE    ->
+        Individual processing units within a CPU.
+        Modern CPU have multiple cores, performing multiple tasks simultaneously.
+
+PROGRAM ->
+        Set of instructions written in a programming language that tells the computer how to perform a specific task.
+
+PROCESS ->
+        Instance of a program that is being executed.
+        When a program runs  the OS creates a process to manage its execution.
+
+THREAD  ->
+        A thread is a smallest unit of execution within a process.
+        A process can have multiple threads, which share same resources but run independently.
+        EX: A browser might use multiple threads for different tabs with each tab running as a separate thread.
+
+MULTI TASKING ->
+        It allows OS to run multiple processes simultaneously.
+        On SINGLE-CORE this is done through time sharing, rapidly switching between tasks.
+        On MULTI-CORE true parallel executions occurs, with task distribution across cores.
+        OS scheduler balances the load, ensuring efficient and responsive system performance.
+
+        It utilizes the capabilities of the CPU and its cores.
+        When OS performs multitasking, it can assign different tasks to different cores.
+        More efficient than assigning all the task to single cores.
+
+MULTI THREADING ->
+        It refers to the ability to execute multiple threads within a single process concurrently.
+        Like having separate threads for rendering page, running JS and managing user inputs, making browser more responsive.
+
+        Enhances the efficiency of multi-tasking by breaking down individual tasks into smaller sub-tasks or threads.
+        Processing these threads simultaneously makes the CPU compatibility better.
+
+SINGLE-CORE SYSTEM VS MULTI-CORE SYSTEM ->
+
+    SINGLE-CORE SYSTEM ->
+        Threads and the processes are managed by OS scheduler through time slicing and context switching.
+        Creating illusion of simultaneous execution.
+
+    MULTI-CORE SYSTEM ->
+        Both threads and processes can run in true parallelism on different cores.
+        With OS schedulers distributing across the cores to optimize performance.
+
+TIME SLICING ->
+        Divides time interval into small slices or quanta.
+        Function: OS scheduler allocates these slices to different processes and threads, ensuring each gets a fair share of CPU time.
+        Purpose: Single thread from monopolizing the CPU, improving responsiveness and enabling concurrent execution.
+
+CONTEXT SWITCHING ->
+        It is the process of saving the current state of the running process or thread and loading the next one to be executed.
+        Function: When threads time slice expires, the OS scheduler performs a context switch to move the CPU focus to another process or thread.
+        Purpose: Allows multiple processes and threads to share CPU giving appearance of simultaneous in single-core and improve parallelism in multi-core.
+
+
