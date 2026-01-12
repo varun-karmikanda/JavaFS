@@ -1,0 +1,17 @@
+New ->
+        A thread is in this state when it is created but not yet started.
+        (When object is created)
+
+Runnable ->
+        After the start method is called, the thread becomes runnable.
+        It is ready to run and is waiting for CPU time.
+        (When we call start() method)
+
+Running ->
+        The thread in this state when it is executing.
+
+Blocked/Waiting ->
+        A thread is in this state when it is waiting for a resource or for another thread to perform an action.
+
+Terminated ->
+        A thread is in this state when it has finished executing.

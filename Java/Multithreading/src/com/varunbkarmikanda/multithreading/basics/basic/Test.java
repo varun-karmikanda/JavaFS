@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.multithreading.basics;
+package com.varunbkarmikanda.multithreading.basics.basic;
 
 public class Test {
     public static void main(String[] args) {
