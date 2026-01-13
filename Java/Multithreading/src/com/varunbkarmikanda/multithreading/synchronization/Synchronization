@@ -1,0 +1,9 @@
+CRITICAL SECTION ->
+        A segment of the code that access a shared resources that must not be accessed concurrently accessed by more than one thread.
+
+RACE CONDITION ->
+        A bug that occurs when the output of the program depends on the unpredictable sequence or timings of the thread.
+        (When multiple thread are working on a shared resource and their timings overlap only one of the multiple gets the shared value changed)
+
+MUTUAL EXCLUSION ->
+        It ensures that only one thread can enter the critical section at a time.
