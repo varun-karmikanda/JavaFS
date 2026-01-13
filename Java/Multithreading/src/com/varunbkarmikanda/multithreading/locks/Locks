@@ -1,0 +1,30 @@
+LOCKS ->
+    INTRINSIC & EXPLICIT
+
+    INTRINSIC ->
+        These are built into every object in Java.
+        When we use synchronized keyword, we use these automatic locks.
+
+    EXPLICIT ->
+        These are more advanced locks that we can control using the Lock class in the java.util.concurrent.locks
+        You can explicitly say when to lock and unlock, giving more control over how and when people can write in a notebook.
+
+DEADLOCK PREVENTION USING REENTRANT LOCK
+        It sets a count of how many locks are in used and how many are unlocked and does not cause deadlock.
+        EX: Having a Master key of the house allowing to go anywhere.
+        Like enter the house then enter a room and exit the room later exit the house.
+
+
+        .lock()
+
+        .tryLock()
+
+        .unlock()
+
+        .lockInterruptibly()
+
+DISADVANTAGE OF Synchronized LOCK
+1. No guarantee of Fairness
+2. Indefinite Blocking
+3. Interrupt ability
+4. Cannot differentiate between Read/Write locks
