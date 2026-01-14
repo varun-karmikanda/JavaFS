@@ -1,0 +1,12 @@
+DEADLOCK is a situation where 2 or more threads are blocked forever, waiting for each other to release a resource.
+This typically occurs when 2 or more threads have a circular dependencies on a set of lock.
+
+DEADLOCK CONDITIONS
+
+1. Mutual exclusion: One thread can access a resource at a time.
+
+2. Hold and Wait: A thread holding at least one resource is waiting to acquire additional resources held by other threads.
+
+3. No preemption: Resources cannot be forcibly taken from thread holding them.
+
+4. Circular wait: A set of threads is waiting for each other in a circular chain.
