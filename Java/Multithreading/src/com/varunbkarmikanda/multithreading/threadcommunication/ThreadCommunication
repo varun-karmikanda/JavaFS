@@ -1,0 +1,7 @@
+Can call within a synchronized block
+
+wait() -> Release the lock and wait until another thread notifies or notifiesAll
+
+notify() -> Wakes up single thread that is waiting
+
+notifyAll() -> Wakes up all thread that is waiting
