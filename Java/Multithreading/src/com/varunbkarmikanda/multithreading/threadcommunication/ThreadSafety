@@ -1,0 +1,1 @@
+Thread safe when we do not get unexpected results and do not encounter any race-condition when multiple threads try to access an object or a block of code.

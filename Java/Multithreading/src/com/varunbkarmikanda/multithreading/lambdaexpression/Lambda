@@ -1,0 +1,13 @@
+An interface with Single Abstract Method is called as FUNCTIONAL INTERFACE.
+
+Lambda Expression =  Anonymous function
+
+function/method
+public void func(){
+    System.out.println("Hello");
+}
+
+Lambda expression
+() -> {
+    System.out.println("Hello");
+}
