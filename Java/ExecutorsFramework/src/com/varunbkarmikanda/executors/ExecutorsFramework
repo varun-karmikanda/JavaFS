@@ -1,0 +1,15 @@
+It was introduced as per Java 5 as part of java.util.concurrent package to simplify development of concurrent application by abstracting away many of the complexities involved in creating and managing threads.
+
+Problems prior to Executors Framework
+
+1. Manual Thread Management
+2. Resource management
+3. Scalability
+4. Thread reuse
+5. Error Handling
+
+Executors Framework
+
+1. Executor
+2. ExecutorService
+3. ScheduledExecutorService
