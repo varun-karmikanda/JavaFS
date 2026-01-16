@@ -1,0 +1,19 @@
+.submit(Runnable)
+
+.submit(Callable)
+
+.submit(Runnable, result)
+
+.shutdown()
+
+.shutdownNow()
+
+.awaitTermination()
+
+.isShutdown()
+
+.isTerminated()
+
+.invokeAll()
+
+.invokeAny()
