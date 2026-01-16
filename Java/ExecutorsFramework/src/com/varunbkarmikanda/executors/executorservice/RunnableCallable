@@ -1,0 +1,10 @@
+Runnable
+1. when u don't want to return
+2. has run()
+3. does not throw error signature
+
+
+Callable
+1. when u want to return
+2. has call()
+3. Throws error signature
