@@ -1,0 +1,7 @@
+When u want to do a work after a delay or periodically at a regular interval
+
+.schedule()
+
+.scheduleAtFixedRate()
+
+.scheduleWithFixedDelay()
