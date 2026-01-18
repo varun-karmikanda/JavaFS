@@ -1,0 +1,5 @@
+By default CompletableFeature task often runs on daemon threads due to the use of ForkJoinPool.commonPool,
+
+You can control the thread type by providing custom executor service.
+
+The CompletableFeature task itself doesn't dedicate weather it's daemon or user thread.
