@@ -1,0 +1,20 @@
+================================================================================
+CHALLENGE 3: THE STATE EXPLORER (Visualizing Transitions)
+================================================================================
+SCENARIO: To debug a production deadlock, you need to know how to
+programmatically check what a thread is doing.
+
+1. Create a thread 'Worker' using a Lambda that:
+   - Sleeps for 2 seconds.
+2. IN MAIN:
+   - Create the thread object (don't start it yet).
+   - Print state: Expect 'NEW'.
+   - Start the thread.
+   - Print state: Expect 'RUNNABLE'.
+   - Make Main sleep for 500ms (to let the Worker start its sleep).
+   - Print state: Expect 'TIMED_WAITING'.
+   - Join the thread (wait for it to finish).
+   - Print state: Expect 'TERMINATED'.
+
+HINT: Use 'thread.getState()' which returns a 'Thread.State' enum.
+================================================================================

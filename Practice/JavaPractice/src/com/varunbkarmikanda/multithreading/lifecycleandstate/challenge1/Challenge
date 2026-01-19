@@ -1,0 +1,22 @@
+================================================================================
+CHALLENGE 1: THE GRACEFUL SHUTDOWN (Interruption Handling)
+================================================================================
+SCENARIO: A background thread is processing data in a loop. When the user
+clicks "Stop," the thread must finish its current work and exit cleanly,
+rather than being killed instantly.
+
+1. Create a thread 'DataProcessor'.
+2. Inside 'run()', use a 'while (!Thread.currentThread().isInterrupted())' loop.
+3. Inside the loop:
+   - Print "Processing data batch..."
+   - Use 'Thread.sleep(1000)' to simulate work.
+   - IMPORTANT: Catch 'InterruptedException'. Inside the catch block, you
+     MUST re-interrupt the thread using 'Thread.currentThread().interrupt()'
+     to ensure the loop condition sees the flag.
+4. IN MAIN:
+   - Start the thread.
+   - Let it run for 3 seconds.
+   - Call 'thread.interrupt()'.
+   - Print "Main requested shutdown."
+
+================================================================================

@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 2: THE JOINED TIMEOUT (Coordination)
+================================================================================
+SCENARIO: Your app fetches a "Daily Quote" from a slow server. If the
+server takes longer than 2 seconds, you want to give up and show a
+cached quote instead.
+
+1. Create a thread 'FetchQuoteTask'.
+2. Inside 'run()', make it sleep for 5 seconds to simulate a slow network.
+3. IN MAIN:
+   - Start the thread.
+   - Use 'thread.join(2000);' // This is the version with a timeout.
+   - After the join, check 'if (thread.isAlive())'.
+   - If alive, print: "Server too slow! Using cached quote."
+   - If not alive, print: "Quote fetched successfully!"
+================================================================================
