@@ -1,0 +1,14 @@
+================================================================================
+CHALLENGE 2: THE PARALLEL PAYMENT PROCESSOR (The Lambda approach)
+================================================================================
+SCENARIO: A high-volume e-commerce site needs to process small payment
+confirmations. Using full classes is overkill; use Lambdas for conciseness.
+
+1. Create a List<Integer> transactionIds = List.of(1001, 1002, 1003, 1004);
+2. USE A STREAM OR FOR-EACH to iterate through the IDs.
+3. FOR EACH ID, start a thread using a LAMBDA EXPRESSION:
+   - Example: new Thread(() -> { /* logic */ }).start();
+4. INSIDE THE LAMBDA:
+   - Print: "Processing payment for ID: " + id
+   - Print: "Payment " + id + " SUCCESS"
+================================================================================

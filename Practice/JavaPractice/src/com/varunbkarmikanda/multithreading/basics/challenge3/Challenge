@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 3: THE "INHERITANCE TRAP" (Runnable vs. Thread)
+================================================================================
+SCENARIO: You have a 'BaseService' class for DB connections. Your
+'ReportService' MUST inherit from it, but also needs to run in the background.
+
+1. Create 'class BaseService { void connect() { System.out.println("Connected to DB"); } }'.
+2. Create 'class ReportService' that EXTENDS 'BaseService' and IMPLEMENTS 'Runnable'.
+3. Inside 'run()':
+   - Call the inherited 'connect()' method.
+   - Print "Generating PDF Report...".
+4. IN YOUR MAIN CLASS:
+   - Instantiate 'ReportService'.
+   - Wrap it in a 'Thread' object (e.g., new Thread(myReportService).start()).
+   - QUESTION TO SELF: Why couldn't you 'extend Thread' here?
+================================================================================

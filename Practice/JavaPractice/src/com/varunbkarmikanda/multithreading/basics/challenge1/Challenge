@@ -1,0 +1,15 @@
+================================================================================
+CHALLENGE 1: THE MULTI-SOURCE LOG AGGREGATOR (The Runnable Approach)
+================================================================================
+SCENARIO: You are building a system to monitor logs from multiple servers.
+To avoid blocking the main thread, each server must have its own "Watcher".
+
+1. Create a class 'LogWatcher' that IMPLEMENTS 'Runnable'.
+2. The constructor should accept a String 'serverName'.
+3. Inside 'run()':
+   - Print: "[START] Monitoring logs for: " + serverName
+   - Print: "[INFO] " + serverName + " is healthy."
+4. IN YOUR MAIN CLASS:
+   - Create a List<String> servers = List.of("Auth-Server", "DB-Cluster", "UI-Gateway");
+   - Use a loop to create a NEW 'Thread' for each server and '.start()' it.
+================================================================================
