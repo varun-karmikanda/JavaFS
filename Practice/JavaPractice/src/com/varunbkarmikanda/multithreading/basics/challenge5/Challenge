@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 5: THE FACTORY CLEANUP (Managing the Thread Object)
+================================================================================
+SCENARIO: In production, we don't like "orphan" threads. If the main app
+shuts down, background tasks should often shut down too.
+
+1. Create a "LongRunningTask" using a Lambda.
+2. Inside the lambda, use a loop that prints "Cleaning up logs..." every 500ms.
+3. IN MAIN:
+   - Create the thread.
+   - Set 'thread.setDaemon(true);' before calling '.start()'.
+   - Print "Main App started".
+   - Let Main sleep for 2 seconds, then print "Main App exiting".
+4. OBSERVATION: Notice how the background thread stops automatically when
+   Main finishes because it is a DAEMON thread.
+================================================================================

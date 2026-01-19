@@ -1,0 +1,16 @@
+================================================================================
+CHALLENGE 4: THE THREAD-SAFE COUNTER (Basics + Intro to Safety)
+================================================================================
+SCENARIO: You are tracking "Active Users" on a website. Multiple threads
+will increment a shared counter. If you aren't careful, you'll lose data!
+
+1. Create a class 'UserTracker'.
+2. Add a private int 'activeUsers = 0;'.
+3. Create a method 'increment()' that adds 1 to 'activeUsers'.
+4. IN MAIN:
+   - Create ONE instance of 'UserTracker'.
+   - Start 100 threads. Each thread should call 'tracker.increment()' once.
+   - Use 'Thread.sleep(1000)' in Main to wait, then print the final count.
+5. THE CATCH: The count will likely be LESS than 100.
+6. FIX IT: Use the 'synchronized' keyword on the increment method.
+================================================================================
