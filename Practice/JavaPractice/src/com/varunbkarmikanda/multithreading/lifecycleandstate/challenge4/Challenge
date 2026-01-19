@@ -1,0 +1,22 @@
+================================================================================
+CHALLENGE 4: THE "HEALTH-CHECK" MONITOR (Complex State)
+================================================================================
+SCENARIO: In a production microservice, you often have a background "Health Checker"
+that monitors database connectivity. If the checker hangs, the system must
+detect its state and restart it.
+
+1. Create an interface 'ServiceTask' with a 'void execute()' method.
+2. Create 'DatabaseMonitor' that implements 'ServiceTask'.
+   - In 'execute()', simulate a hang using 'Thread.sleep(10000)'.
+3. Create a 'MonitorManager' class.
+4. IN THE MANAGER:
+   - Create a method 'inspect(Thread t)'.
+   - If the thread is in 'TIMED_WAITING' for too long, 'interrupt()' it.
+5. CHALLENGE:
+   - Wrap the 'DatabaseMonitor' in a thread.
+   - Start it.
+   - While it's running, have your Manager check its state every 500ms.
+   - If the state is 'TIMED_WAITING', print: "System is idling... status OK."
+   - After 3 checks, trigger an 'interrupt()' to simulate a timeout force-close.
+
+================================================================================

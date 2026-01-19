@@ -1,0 +1,19 @@
+================================================================================
+CHALLENGE 5: THE PRODUCER-STATE DEADLOCK (Intro to BLOCKED)
+================================================================================
+SCENARIO: You want to see the 'BLOCKED' state. This happens when two threads
+fight for the same 'synchronized' lock.
+
+1. Create a shared object: 'Object lock = new Object();'.
+2. Create Thread A:
+   - Synchronize on 'lock'.
+   - Inside, sleep for 5 seconds.
+3. Create Thread B:
+   - Try to synchronize on 'lock' immediately.
+4. IN MAIN:
+   - Start Thread A.
+   - Sleep for 100ms (to ensure A gets the lock).
+   - Start Thread B.
+   - Print Thread B's state.
+   - EXPECTATION: You should see 'BLOCKED'.
+================================================================================
