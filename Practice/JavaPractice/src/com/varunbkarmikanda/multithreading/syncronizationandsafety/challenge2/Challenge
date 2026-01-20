@@ -1,0 +1,13 @@
+================================================================================
+CHALLENGE 2: THE BANK ACCOUNT (ReentrantLock)
+================================================================================
+SCENARIO: 'synchronized' is easy, but 'ReentrantLock' is more flexible
+for production. It allows for "Try-Locking" (don't wait forever).
+
+1. Create 'BankAccount' with 'balance = 1000'.
+2. Use 'private final ReentrantLock lock = new ReentrantLock();'.
+3. Create 'withdraw(amount)':
+   - Use 'lock.lock()' and 'lock.unlock()' in a try-finally block.
+4. ADVANCED: Use 'lock.tryLock(1, TimeUnit.SECONDS)'.
+   - If it fails to get the lock, print "ATM busy, try later" instead of waiting.
+================================================================================

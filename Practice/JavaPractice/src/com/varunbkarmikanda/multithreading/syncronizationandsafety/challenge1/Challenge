@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 1: THE INVENTORY RACE (The 'synchronized' keyword)
+================================================================================
+SCENARIO: An e-commerce site has 10 items in stock. 100 customers try to
+buy 1 item each at the exact same millisecond. Without safety, you'll
+sell more items than you have (overselling).
+
+1. Create a class 'Warehouse'.
+2. Add 'private int stock = 10;'.
+3. Create a method 'public void fulfillOrder()'.
+   - If stock > 0, decrement stock and print "Order filled".
+   - Else, print "Out of stock".
+4. IN MAIN:
+   - Start 100 threads that all call 'warehouse.fulfillOrder()'.
+5. PROBLEM: Notice you'll see more than 10 "Order filled" messages.
+6. FIX: Add 'synchronized' to the method and observe the fix.
+
+================================================================================
