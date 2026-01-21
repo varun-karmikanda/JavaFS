@@ -1,0 +1,32 @@
+================================================================================
+CHALLENGE 4: THE CIRCULAR WAIT (Deadlock Simulation)
+================================================================================
+SCENARIO: Two services (Billing and Inventory) need to lock each other's
+resources to complete a transaction. If they lock in the wrong order,
+the system freezes forever.
+
+1. Create a class 'DeadlockSim'.
+2. Define two static locks:
+   - static final Lock lockBilling = new ReentrantLock();
+   - static final Lock lockInventory = new ReentrantLock();
+
+3. TASK A (Billing Service):
+   - Lock 'lockBilling'.
+   - Print "Billing: Locked billing record."
+   - Sleep for 100ms (to give Task B time to start).
+   - Lock 'lockInventory'.
+   - Print "Billing: Locked inventory record. Transaction complete."
+   - Unlock both in finally blocks.
+
+4. TASK B (Inventory Service):
+   - Lock 'lockInventory'.
+   - Print "Inventory: Locked inventory record."
+   - Sleep for 100ms.
+   - Lock 'lockBilling'.
+   - Print "Inventory: Locked billing record. Transaction complete."
+   - Unlock both in finally blocks.
+
+5. RUN IT: Observe the freeze.
+6. THE FIX (Lock Ordering): Rewrite Task B so it locks 'Billing' FIRST, then
+   'Inventory'. Observe how the deadlock disappears.
+================================================================================

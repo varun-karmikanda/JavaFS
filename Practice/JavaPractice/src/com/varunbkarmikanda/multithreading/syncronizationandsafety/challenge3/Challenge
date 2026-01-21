@@ -1,0 +1,22 @@
+================================================================================
+CHALLENGE 3: THE HIGH-TRAFFIC PRODUCT PAGE (ReadWriteLock)
+================================================================================
+SCENARIO: An e-commerce site has a "Product Price". 1,000 users are looking
+at the price (Reading), and 1 admin is updating the price (Writing).
+A 'ReentrantLock' would block the 1,000 users. A 'ReadWriteLock' allows
+them all to read simultaneously!
+
+1. Create 'ProductPage' class with 'private double price = 99.99;'.
+2. Use 'private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();'.
+3. Create 'getPrice()':
+   - Acquire 'rwLock.readLock().lock()'.
+   - Print "Reading price..." and return price.
+   - Unlock in finally.
+4. Create 'setPrice(double newPrice)':
+   - Acquire 'rwLock.writeLock().lock()'.
+   - Print "Updating price..." and update the field.
+   - Unlock in finally.
+5. CHALLENGE: Start 5 reader threads and 1 writer thread. Observe how
+   multiple readers can be inside 'getPrice' at the same time.
+
+================================================================================
