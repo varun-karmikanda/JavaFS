@@ -1,0 +1,25 @@
+================================================================================
+CHALLENGE 5: THE MAINTENANCE FLAG (Volatile & Memory Visibility)
+================================================================================
+SCENARIO: An Admin thread updates a 'running' flag to stop the system.
+However, the Worker thread has "cached" the value in its local CPU core
+and doesn't see the update, causing the system to run forever.
+
+1. Create a class 'ServerConfig'.
+2. Add a 'private boolean running = true;'.
+3. Create 'public void stopServer() { this.running = false; }'.
+4. Create 'public boolean isRunning() { return this.running; }'.
+5. IN MAIN:
+   - Create one 'ServerConfig' instance.
+   - Start a Worker Thread:
+        while (config.isRunning()) {
+            // Do nothing, just loop fast
+        }
+        System.out.println("Worker: Shutdown detected. Exiting...");
+   - Let Main sleep for 2 seconds.
+   - Call 'config.stopServer()'.
+   - Print "Main: Stop signal sent."
+6. THE TEST: If the Worker never prints "Exiting...", you have a visibility bug!
+7. THE FIX: Add the 'volatile' keyword to the boolean.
+
+================================================================================

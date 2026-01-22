@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 6: THE SECURITY GATEWAY (CopyOnWriteArrayList)
+================================================================================
+SCENARIO: Your API checks a "Blacklist" of IPs for every request. If you use
+a normal ArrayList and try to add a new IP while 100 threads are reading it,
+Java throws a 'ConcurrentModificationException'.
+
+1. Create a class 'SecurityGateway'.
+2. Initialize: 'List<String> blacklist = new CopyOnWriteArrayList<>();'
+   - Add "192.168.1.1" and "10.0.0.5" to start.
+3. TASK 1 (The Reader):
+   - Create a thread that loops 10 times.
+   - Inside, use a for-each loop to iterate over the 'blacklist' and print them.
+   - Sleep 200ms between loops.
+4. TASK 2 (The Admin):
+   - Create a thread that sleeps for 500ms, then adds "172.16.0.1" to the list.
+5. OBSERVATION: Notice how the Reader doesn't crash even though the list
+   changed while it was iterating.
