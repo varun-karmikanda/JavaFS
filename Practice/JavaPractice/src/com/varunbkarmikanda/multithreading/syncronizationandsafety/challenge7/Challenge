@@ -1,0 +1,12 @@
+================================================================================
+CHALLENGE 7: THE REQUEST COUNTER (AtomicInteger)
+================================================================================
+SCENARIO: You are counting total API hits. If you use 'count++', you will
+lose data because 'count++' is actually 3 operations (Read, Add, Write).
+
+1. Create 'private final AtomicInteger totalRequests = new AtomicInteger(0);'.
+2. Start 50 threads.
+3. Each thread should loop 1000 times and call 'totalRequests.incrementAndGet();'.
+4. Join all threads and print the result.
+5. EXPECTATION: Result must be exactly 50,000.
+================================================================================
