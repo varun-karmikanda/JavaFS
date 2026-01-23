@@ -16,3 +16,5 @@ Java throws a 'ConcurrentModificationException'.
    - Create a thread that sleeps for 500ms, then adds "172.16.0.1" to the list.
 5. OBSERVATION: Notice how the Reader doesn't crash even though the list
    changed while it was iterating.
+
+================================================================================
