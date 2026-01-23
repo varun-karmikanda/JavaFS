@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 1: THE PRODUCER-CONSUMER (wait() & notifyAll())
+================================================================================
+SCENARIO: A "Producer" thread creates data (e.g., a Log message) and puts it
+in a 'DataBox'. A "Consumer" thread waits for data to appear, processes it,
+and clears the box.
+
+1. Create a class 'DataBox'.
+2. Fields: 'private String message', 'private boolean hasMessage = false'.
+3. Method 'public synchronized void produce(String msg)':
+   - While 'hasMessage' is true, call 'wait()'.
+   - Set message, set 'hasMessage = true', then 'notifyAll()'.
+4. Method 'public synchronized String consume()':
+   - While 'hasMessage' is false, call 'wait()'.
+   - Set 'hasMessage = false', 'notifyAll()', and return the message.
+
+PRO TIP: Always use 'while' loop for 'wait()', never 'if'.
+================================================================================
