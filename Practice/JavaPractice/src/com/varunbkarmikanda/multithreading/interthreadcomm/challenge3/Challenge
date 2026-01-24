@@ -1,0 +1,23 @@
+================================================================================
+CHALLENGE 3: THE FLIGHT SEARCH AGGREGATOR (CountDownLatch)
+================================================================================
+SCENARIO: You are building a travel site. To show a search result, you must
+fetch prices from 3 different airline APIs. The main thread must wait
+for all 3 to finish before "calculating the best deal."
+
+1. CLASS: 'FlightSearchAggregator'
+2. TOOL: 'private final CountDownLatch latch = new CountDownLatch(3);'
+3. TASK (AirlinesTask):
+   - A Runnable that takes a String 'airlineName'.
+   - Simulate a delay (random sleep between 1-3 seconds).
+   - Print: "Fetched prices from " + airlineName.
+   - Action: Call 'latch.countDown()'.
+
+4. MAIN:
+   - Start 3 threads: "Delta", "United", and "Lufthansa".
+   - Logic: Call 'latch.await()'.
+   - Print: "All responses received. Sorting best deals for the user..."
+
+EXPECTATION: Even if Delta finishes in 1s and United in 2s, the Main thread
+will stay frozen until the very last airline responds.
+================================================================================

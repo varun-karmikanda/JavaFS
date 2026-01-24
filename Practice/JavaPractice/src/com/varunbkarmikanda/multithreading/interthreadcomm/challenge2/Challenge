@@ -1,0 +1,33 @@
+================================================================================
+CHALLENGE: THE BOUNDED BUFFER (PRODUCER-CONSUMER QUEUE)
+================================================================================
+SCENARIO: You are building a Log Processor. Multiple services generate logs
+(Producers), and one service writes them to a file (Consumer).
+To prevent memory overflow, the "In-Box" can only hold 5 logs at a time.
+
+1. Create a class 'BoundedBuffer'.
+2. Use 'private final Queue<String> queue = new LinkedList<>();'
+3. Use 'private final int CAPACITY = 5;'.
+
+4. IMPLEMENT 'public synchronized void produce(String log)':
+   - Use 'while (queue.size() == CAPACITY) { wait(); }'
+   - Add the log to the queue.
+   - Print: "[Producer] Added log. Buffer size: " + queue.size()
+   - Call 'notifyAll()'.
+
+5. IMPLEMENT 'public synchronized String consume()':
+   - Use 'while (queue.isEmpty()) { wait(); }'
+   - Remove/Poll the log from the queue.
+   - Print: "[Consumer] Processed log. Buffer size: " + queue.size()
+   - Call 'notifyAll()'.
+   - Return the log.
+
+6. IN MAIN:
+   - Create one 'BoundedBuffer'.
+   - Start a Producer thread that tries to add 15 logs in a fast loop.
+   - Start a Consumer thread that processes logs with a 'Thread.sleep(1000)'
+     delay (to simulate slow disk writing).
+
+OBSERVATION: Watch how the Producer quickly fills 5 slots and is then
+FORCED to wait until the slow Consumer removes one.
+================================================================================
