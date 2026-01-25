@@ -1,0 +1,26 @@
+================================================================================
+CHALLENGE 5: THE DB CONNECTION POOL (Semaphore)
+================================================================================
+SCENARIO: Your Database is old and can only handle 3 connections at once.
+If 10 threads try to write data simultaneously, the DB will crash.
+You must use a Semaphore to "throttle" the traffic.
+
+1. CLASS: 'DatabasePool'
+2. TOOL: 'private final Semaphore semaphore = new Semaphore(3);'
+
+3. METHOD: 'public void accessDatabase()'
+   - Print: Thread.getName() + " is waiting for a connection..."
+   - Action: Call 'semaphore.acquire()'.
+   - Logic:
+        Print: Thread.getName() + " >> CONNECTION ACQUIRED."
+        Thread.sleep(2000); // Simulate a heavy SQL Query
+   - Finally:
+        Print: Thread.getName() + " << RELEASING CONNECTION."
+        Call 'semaphore.release()'.
+
+4. MAIN:
+   - Start 10 threads that all try to call 'accessDatabase()'.
+
+EXPECTATION: You should see 3 threads enter the "ACQUIRED" state immediately,
+while the other 7 wait. As soon as one releases, another should jump in.
+================================================================================

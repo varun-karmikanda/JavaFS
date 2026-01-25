@@ -1,0 +1,21 @@
+================================================================================
+CHALLENGE 4: THE MULTIPLAYER LOBBY (CyclicBarrier)
+================================================================================
+SCENARIO: You are building a 4-player game. Players join at different times,
+but the game logic requires all 4 to be "Ready" before the map loads.
+
+1. CLASS: 'GameLobby'
+2. TOOL: 'CyclicBarrier barrier = new CyclicBarrier(4, () -> System.out.println("--- ALL PLAYERS READY! LOADING MAP ---"));'
+3. TASK (PlayerTask):
+   - Simulate a player "Connecting..." (Thread.sleep).
+   - Print: Thread.getName() + " is waiting in the lobby."
+   - Action: Call 'barrier.await()'.
+   - Print: Thread.getName() + " has entered the game world!"
+
+4. MAIN:
+   - Start 4 threads representing players.
+
+EXPECTATION: You will see players 1, 2, and 3 "waiting." Only when player 4
+arrives will all of them move to the "entered game world" print statement
+simultaneously.
+================================================================================
