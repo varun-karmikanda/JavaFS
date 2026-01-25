@@ -1,0 +1,27 @@
+================================================================================
+CHALLENGE 6: THE SEQUENTIAL PRINTER (Signaling Order)
+================================================================================
+SCENARIO: You have 3 threads. Thread-A prints "A", Thread-B prints "B",
+and Thread-C prints "C". Even though they run concurrently, the output
+must always be "A B C A B C..." in perfect order.
+
+1. CLASS: 'SequenceCoordinator'
+2. STATE: 'private int status = 1;' // 1=A, 2=B, 3=C
+
+3. METHODS (All Synchronized):
+   - 'printA()':
+        While status != 1, wait().
+        Print "A ". Set status = 2. notifyAll().
+   - 'printB()':
+        While status != 2, wait().
+        Print "B ". Set status = 3. notifyAll().
+   - 'printC()':
+        While status != 3, wait().
+        Print "C ". Set status = 1. notifyAll().
+
+4. MAIN:
+   - Create 3 threads, each running their specific method in a loop of 5.
+
+EXPECTATION: No matter which thread starts first, the console should
+neatly print: A B C A B C A B C A B C A B C
+================================================================================
