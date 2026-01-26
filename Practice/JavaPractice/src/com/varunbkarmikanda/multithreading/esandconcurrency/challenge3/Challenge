@@ -1,0 +1,26 @@
+================================================================================
+CHALLENGE 3: THE CONCURRENT INVENTORY (ConcurrentHashMap)
+================================================================================
+SCENARIO: A high-traffic e-commerce site is having a flash sale. 10 different
+threads (Warehouse Workers) are updating the "Laptop" stock simultaneously.
+You must ensure no updates are lost using a thread-safe Collection.
+
+1. CLASS: 'InventoryWorker' (implements Runnable)
+   - Constructor: Takes 'Map<String, Integer> stock' and 'int updates'.
+   - 'run()' logic:
+        * Loop 'updates' times.
+        * Use 'stock.merge("Laptop", 1, Integer::sum);' to increment.
+        * Print: Thread.currentThread().getName() + " updated stock."
+
+2. CLASS: 'InventoryManager' (Main)
+   - Use 'Map<String, Integer> stockMap = new ConcurrentHashMap<>();'
+   - TOOL: 'ExecutorService executor = Executors.newFixedThreadPool(5, r ->
+           new Thread(r, "Warehouse-Worker-" + count.getAndIncrement()));'
+
+3. EXECUTION:
+   - Submit 10 'InventoryWorker' tasks, each doing 100 updates.
+   - Use 'try-with-resources' to manage the executor.
+
+EXPECTATION: The final count for "Laptop" must be exactly 1000.
+If you use a 'HashMap', the result will likely be 984, 991, etc. (Broken).
+================================================================================

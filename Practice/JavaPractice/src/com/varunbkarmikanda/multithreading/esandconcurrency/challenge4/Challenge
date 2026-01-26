@@ -1,0 +1,23 @@
+================================================================================
+CHALLENGE: THE MULTI-THREADED PORT SCANNER (Security Edition)
+================================================================================
+SCENARIO: You need to check which ports (80, 443, 8080, etc.) are open on a
+local server. Instead of waiting for each timeout, you'll use a Thread Pool.
+
+1. CLASS: 'PortScannerTask' (implements Callable<Boolean>)
+   - Constructor: Takes 'String ip' and 'int port'.
+   - 'call()' logic:
+        * Try to create a 'new Socket()'.
+        * Use 'socket.connect(new InetSocketAddress(ip, port), 200);'
+        * If it connects, return 'true' (Port Open).
+        * If it throws an exception, return 'false' (Port Closed).
+
+2. MAIN:
+   - Use an 'ExecutorService' with 10 threads.
+   - Loop through ports 75 to 85.
+   - Submit each 'PortScannerTask'.
+   - Print only the ports that return 'true'.
+
+EXPECTATION: The scanner should finish in a couple of seconds rather than
+ten, even with connection timeouts.
+================================================================================
