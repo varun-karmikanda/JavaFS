@@ -1,0 +1,19 @@
+================================================================================
+CHALLENGE 1: THE FIXED THREAD POOL (ExecutorService)
+================================================================================
+SCENARIO: You are building an Email Service. 100 users just clicked "Forgot
+Password." You don't want to start 100 threads (too much RAM!). You want
+a "Pool" of 5 threads that work through the pile of 100 emails.
+
+1. TOOL: 'ExecutorService executor = Executors.newFixedThreadPool(5);'
+
+2. TASK: Create a 'Runnable' called 'EmailTask' that:
+   - Takes a 'userId'.
+   - Prints: "Thread " + getName() + " is sending email to User " + userId.
+   - Sleeps for 500ms.
+
+3. MAIN:
+   - Loop 100 times.
+   - Use 'executor.execute(new EmailTask(i));'
+   - Call 'executor.shutdown();' at the very end.
+================================================================================

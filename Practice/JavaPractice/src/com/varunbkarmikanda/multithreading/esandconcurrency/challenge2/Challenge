@@ -1,0 +1,29 @@
+================================================================================
+CHALLENGE 2: THE PARALLEL SUM (Callable & Future)
+================================================================================
+SCENARIO: You are building a data processing engine. You need to calculate the
+sum of all numbers from 1 to 1,000,000. To maximize CPU performance, you
+must split the work between two threads.
+
+1. CLASS: 'SumTask'
+   - Must implement 'Callable<Long>'.
+   - Constructor should take 'long start' and 'long end'.
+   - The 'call()' method should:
+        * Loop from start to end.
+        * Maintain a running total.
+        * Return the total sum once finished.
+
+2. MAIN (The Coordinator):
+   - Use 'ExecutorService executor = Executors.newFixedThreadPool(2);'
+   - Define Task 1 (1 to 500,000) and Task 2 (500,001 to 1,000,000).
+   - Use 'executor.submit(task)' to start both.
+   - Capture the 'Future<Long>' objects returned by the submit method.
+
+3. THE CONSOLIDATION:
+   - Call 'future1.get()' and 'future2.get()' to retrieve the results.
+   - Add them together and print: "Final Total: " + grandTotal.
+   - Note: The correct answer should be 500000500000.
+
+4. RESOURCE MANAGEMENT:
+   - Use the 'try-with-resources' or 'finally' pattern you just learned!
+================================================================================
