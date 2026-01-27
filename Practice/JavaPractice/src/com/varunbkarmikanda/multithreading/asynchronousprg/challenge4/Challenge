@@ -1,0 +1,24 @@
+================================================================================
+CHALLENGE 4: THE BULK SYNC (CompletableFuture.allOf)
+================================================================================
+SCENARIO: You are generating a final report. You need to fetch data from
+three different sources (Database, Cache, and Cloud API) in parallel.
+The report can only be finalized when EVERY source has responded.
+
+1. TASKS: Create 3 futures with different "work" times:
+   - 'futureDB': supplyAsync "DB_DATA" (Thread.sleep 500ms)
+   - 'futureCache': supplyAsync "CACHE_DATA" (Thread.sleep 200ms)
+   - 'futureAPI': supplyAsync "API_DATA" (Thread.sleep 1000ms)
+
+2. THE SYNC (allOf):
+   - Create 'CompletableFuture<Void> allTasks = CompletableFuture.allOf(futureDB, futureCache, futureAPI);'
+
+3. THE COMPLETION (thenRun):
+   - Use 'allTasks.thenRun(() -> { ... })'.
+   - LOGIC: Inside the block, print "All data sources reached!"
+   - EXTRA: Use '.join()' on the original futures to print their values:
+     System.out.println("Values: " + futureDB.join() + ", " + futureCache.join() + "...");
+
+EXPECTATION: The program waits for the SLOWEST task (the API) before
+printing the final message.
+================================================================================

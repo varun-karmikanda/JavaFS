@@ -1,0 +1,21 @@
+================================================================================
+CHALLENGE 5: THE SPEED RACE (CompletableFuture.anyOf)
+================================================================================
+SCENARIO: Your app needs a DNS resolution. You call two different DNS
+providers simultaneously. You don't care which one is used; you just want
+the result from the provider that responds the FASTEST.
+
+1. TASK 1 (Server A):
+   - supplyAsync returns "Response from Server A" (Thread.sleep 800ms)
+2. TASK 2 (Server B):
+   - supplyAsync returns "Response from Server B" (Thread.sleep 300ms)
+
+3. THE RACE (anyOf):
+   - Create 'CompletableFuture<Object> fastest = CompletableFuture.anyOf(task1, task2);'
+
+4. THE FINISH (thenAccept):
+   - Chain '.thenAccept(res -> System.out.println("WINNER: " + res));'
+
+EXPECTATION: Even though both tasks are running, you should see
+"WINNER: Response from Server B" because it finished 500ms earlier.
+================================================================================
