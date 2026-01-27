@@ -1,0 +1,22 @@
+================================================================================
+CHALLENGE: THE NETWORK IP SWEEPER (Host Discovery)
+================================================================================
+SCENARIO: You are on a network (192.168.1.x) and need to find all active
+devices. Checking each one manually takes too long.
+
+1. CLASS: 'HostCheckTask' (implements Callable<String>)
+   - Constructor: Takes 'String ip'.
+   - 'call()' logic:
+        * Use 'InetAddress.getByName(ip).isReachable(500)'.
+        * If true, return ip + " is UP".
+        * If false, return null.
+
+2. MAIN:
+   - Use 'ExecutorService executor = Executors.newFixedThreadPool(20);'
+   - Loop from i = 1 to 254.
+   - String targetIp = "192.168.1." + i;
+   - Submit tasks and collect results.
+
+EXPECTATION: The scanner should sweep the entire subnet in seconds.
+Only the "UP" hosts should be printed to the console.
+================================================================================
