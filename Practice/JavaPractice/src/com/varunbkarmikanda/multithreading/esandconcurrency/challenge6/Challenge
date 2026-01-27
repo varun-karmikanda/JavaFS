@@ -1,0 +1,25 @@
+================================================================================
+CHALLENGE : THE RACE STARTER (CountDownLatch)
+================================================================================
+SCENARIO: A "Race" cannot begin until a starter pistol is fired. 5 Runner
+threads must wait at the starting line. Once the Latch count hits zero,
+all threads are released at the exact same moment.
+
+1. CLASS: 'Runner' (implements Runnable)
+   - CONSTRUCTOR: Takes 'CountDownLatch latch'.
+   - 'run()' LOGIC:
+        * Print: Thread.getName() + " is ready and waiting..."
+        * ACTION: Call 'latch.await()'. (The thread stops here).
+        * PRINT: Thread.getName() + " HAS STARTED RUNNING!"
+
+2. CLASS: 'RaceManager' (Main)
+   - TOOL: 'CountDownLatch latch = new CountDownLatch(1);'
+   - EXECUTION:
+        * Create and start 5 'Runner' threads.
+        * Thread.sleep(3000); // Simulate the announcer's buildup.
+        * Print: "!!! BOOM - FIRE !!!"
+        * ACTION: Call 'latch.countDown();' (Releases all runners).
+
+EXPECTATION: All runners print their "waiting" message immediately, then
+there is a 3-second pause, and then all 5 print "STARTED" simultaneously.
+================================================================================

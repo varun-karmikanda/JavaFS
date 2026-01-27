@@ -1,0 +1,24 @@
+================================================================================
+CHALLENGE : THE DATA AGGREGATOR (CyclicBarrier)
+================================================================================
+SCENARIO: You have 3 different services (Auth, Database, Cache) that must
+all finish "Loading" before the server can print "SYSTEM READY".
+Unlike a Latch, the Barrier is for threads waiting for EACH OTHER.
+
+1. CLASS: 'ServiceModule' (implements Runnable)
+   - CONSTRUCTOR: Takes 'String serviceName' and 'CyclicBarrier barrier'.
+   - 'run()' LOGIC:
+        * Print: serviceName + " is loading resources..."
+        * Thread.sleep(random time); // Simulate different loading speeds.
+        * ACTION: Call 'barrier.await()'. (Wait for the other 2 services).
+        * PRINT: serviceName + " is now LIVE."
+
+2. CLASS: 'SystemLauncher' (Main)
+   - TOOL: 'CyclicBarrier barrier = new CyclicBarrier(3, () ->
+           System.out.println(">>> ALL SYSTEMS READY: STARTING SERVER <<<"));'
+   - EXECUTION:
+        * Start 3 'ServiceModule' threads with different names.
+
+EXPECTATION: The "SYSTEM READY" message will ONLY print after the last
+thread calls await(). Then all threads proceed to the "LIVE" message.
+================================================================================
