@@ -1,0 +1,20 @@
+================================================================================
+CHALLENGE 2: THE SECURE PIPELINE (Error Handling)
+================================================================================
+SCENARIO: Your database is down. The "supplyAsync" stage will throw an
+exception. You need to catch it and return a "Safe" string to the next stage.
+
+1. TASK: Modify the first stage (supplyAsync) to throw a RuntimeException:
+   - 'throw new RuntimeException("DATABASE_TIMEOUT");'
+
+2. TOOL: Insert '.exceptionally(ex -> { ... })' immediately after the failure.
+   - Inside the block, print the error: "Caught Error: " + ex.getMessage()
+   - RETURN a fallback string: "Order_System_Error"
+
+3. PIPELINE FLOW:
+   - Stage 1 (Fails) -> Exceptionally (Catches & Returns Fallback) -> Stage 2
+     (Receives Fallback) -> Stage 3 -> thenAccept.
+
+EXPECTATION: Your final print should show the Fallback string plus the price/tax
+tags, proving that the pipeline recovered from the crash.
+================================================================================
