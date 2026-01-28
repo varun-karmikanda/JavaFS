@@ -1,0 +1,24 @@
+================================================================================
+CHALLENGE 1: THE THROUGHPUT TRACKER (AtomicLong)
+================================================================================
+SCENARIO: You are building a high-speed Network Analytics tool. Thousands of
+packets are arriving every millisecond. You must track the total data size
+without using 'synchronized', which would slow down the packet processing.
+
+1. CLASS: 'TrafficSimulator' (implements Runnable)
+   - CONSTRUCTOR: Takes an 'AtomicLong tracker' and 'int packetCount'.
+   - 'run()' LOGIC:
+        * Loop 'packetCount' times (e.g., 100,000).
+        * Inside: Use 'tracker.addAndGet(512);' (Simulating a 512-byte packet).
+
+2. CLASS: 'NetworkMonitor' (Main)
+   - TOOL: 'AtomicLong totalBytes = new AtomicLong(0);'
+   - EXECUTION:
+        * Create an 'ExecutorService' with 10 threads.
+        * Submit 10 'TrafficSimulator' tasks.
+        * Shut down the executor and wait for completion.
+        * PRINT: "Total Data Processed: " + totalBytes.get() + " bytes."
+
+EXPECTATION: The result must be EXACTLY 5,120,000. Using an AtomicLong
+ensures no packet size is lost during the race between 10 threads.
+================================================================================

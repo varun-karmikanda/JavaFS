@@ -1,0 +1,26 @@
+================================================================================
+CHALLENGE: THE PRIVATE CONTEXT (ThreadLocal)
+================================================================================
+SCENARIO: You are building a secure backend. Every request thread needs to
+know which user is calling it, but you don't want to pass 'String userName'
+as a parameter into 20 different methods.
+
+1. CLASS: 'UserSession'
+   - Create: 'public static ThreadLocal<String> currentUser = new ThreadLocal<>();'
+
+2. CLASS: 'ServiceRequest' (implements Runnable)
+   - FIELDS: 'String name'
+   - 'run()' LOGIC:
+        * 1. UserSession.currentUser.set(name);
+        * 2. Call a method: 'logActivity()';
+        * 3. CRITICAL: UserSession.currentUser.remove(); // Essential for clean up!
+
+3. METHOD: 'logActivity()' (Place this in a separate class or as a static helper)
+   - LOGIC: Print: Thread.getName() + " is performing action for: " + UserSession.currentUser.get();
+
+4. MAIN:
+   - Start 3 threads with names: "Varun", "CloudSEK_Admin", and "Guest".
+
+EXPECTATION: Each thread prints its OWN user name, even though they all access
+the same static variable 'UserSession.currentUser'.
+================================================================================

@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.atomickeyword.challenge;
+package com.varunbkarmikanda.atomickeyword.challenge1;
 
 import java.util.concurrent.atomic.AtomicLong;
 

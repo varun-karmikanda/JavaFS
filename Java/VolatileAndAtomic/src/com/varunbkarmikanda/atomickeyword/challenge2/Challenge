@@ -1,0 +1,26 @@
+================================================================================
+CHALLENGE: THE PERFORMANCE RACE (LongAdder vs AtomicLong)
+================================================================================
+SCENARIO: You are tracking "Events per Second" on a server with 50 concurrent
+worker threads. You will run two tests to see which counter is faster.
+
+1. TASK 1 (AtomicLong Test):
+   - Use 'AtomicLong counter = new AtomicLong(0)'.
+   - Create 50 threads. Each thread increments the counter 1,000,000 times.
+   - Use 'System.currentTimeMillis()' before and after to measure duration.
+   - PRINT: "AtomicLong Total: " + counter.get() + " | Time: " + duration + "ms"
+
+2. TASK 2 (LongAdder Test):
+   - Use 'LongAdder adder = new LongAdder()'.
+   - Create 50 threads. Each thread calls 'adder.add(1)' 1,000,000 times.
+   - Measure the duration using the same logic.
+   - PRINT: "LongAdder Total: " + adder.sum() + " | Time: " + duration + "ms"
+
+3. IMPLEMENTATION DETAIL:
+   - Use an 'ExecutorService' with 50 threads to manage the load.
+   - Ensure you wait for all tasks to finish (e.g., using 'executor.shutdown()'
+     and 'awaitTermination') before calculating the final time.
+
+EXPECTATION: Under this "High Contention" (50 threads), 'LongAdder' should be
+significantly faster than 'AtomicLong'.
+================================================================================

@@ -1,0 +1,22 @@
+================================================================================
+CHALLENGE 2: THE HOT-SWAP CONFIG (volatile Reference)
+================================================================================
+SCENARIO: Your application has a "Configuration" object. Thousands of Worker
+threads read this config every second. Occasionally, an Admin thread updates
+ the URL or Timeout. You need the workers to see the update INSTANTLY
+without the massive performance hit of a lock.
+
+1. CLASS: 'ServerConfig' (Immutable)
+   - FIELDS: 'final String url' and 'final int timeout'.
+   - Create a simple constructor to set these.
+
+2. CLASS: 'ConfigManager' (Main)
+   - VARIABLE: 'private static volatile ServerConfig config;'
+   - TASK 1 (Worker): A thread that loops and prints 'config.url' every 500ms.
+   - TASK 2 (Admin): A thread that sleeps for 2 seconds, then swaps the config:
+     'config = new ServerConfig("https://api.v2.com", 5000);'
+
+EXPECTATION: The Worker thread should be printing "v1" initially. The
+moment the Admin thread performs the assignment, the Worker should
+immediately start printing "v2" without any "stale" reads.
+================================================================================
