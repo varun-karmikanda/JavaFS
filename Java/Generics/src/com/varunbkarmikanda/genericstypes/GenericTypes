@@ -1,0 +1,13 @@
+Generic types allows you to define a class, interface or method with placeholders (type parameters) for data type they work with.
+
+class ClassName<T> {
+    class body
+}
+
+<T> --> It is a convention to use a single letter
+
+T: Type
+E: Element (used in collections)
+K: Key (used in maps)
+V: Value (used in maps)
+N: Number
