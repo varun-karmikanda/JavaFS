@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.genericclass.pairgenerics;
+package com.varunbkarmikanda.generictypes.genericclass.pairgenerics;
 
 public class Pair<K, V> {
 

@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.genericclass.withoutgenerics;
+package com.varunbkarmikanda.generictypes.genericclass.withoutgenerics;
 
 public class Main {
     public static void main(String[] args){

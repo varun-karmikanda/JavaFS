@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.genericinterface;
+package com.varunbkarmikanda.generictypes.genericinterface;
 
 public class GenericContainer<T> implements Container<T> {
 

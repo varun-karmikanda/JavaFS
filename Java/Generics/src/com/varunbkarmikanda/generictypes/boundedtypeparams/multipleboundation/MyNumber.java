@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.boundedtypeparams.multipleboundation;
+package com.varunbkarmikanda.generictypes.boundedtypeparams.multipleboundation;
 
 public class MyNumber extends Number implements Printable {
 

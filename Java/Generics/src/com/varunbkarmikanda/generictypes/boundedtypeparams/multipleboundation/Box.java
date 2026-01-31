@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.boundedtypeparams.multipleboundation;
+package com.varunbkarmikanda.generictypes.boundedtypeparams.multipleboundation;
 
 //syntax
 // class ClassName<T extends ClassName1 & interface1 & interface2 &...>{

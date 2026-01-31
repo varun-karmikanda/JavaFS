@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.boundedtypeparams.multipleboundation;
+package com.varunbkarmikanda.generictypes.boundedtypeparams.multipleboundation;
 
 public class Test {
     public static void main(String[] args) {

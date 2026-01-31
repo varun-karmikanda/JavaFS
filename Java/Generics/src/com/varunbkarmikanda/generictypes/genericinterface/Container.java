@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.genericinterface;
+package com.varunbkarmikanda.generictypes.genericinterface;
 
 public interface Container<T> {
 

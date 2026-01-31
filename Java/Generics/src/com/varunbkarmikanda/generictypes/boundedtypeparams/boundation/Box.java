@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.genericstypes.boundedtypeparams.boundation;
+package com.varunbkarmikanda.generictypes.boundedtypeparams.boundation;
 
 public class Box<N extends Number> {
     private N value;
