@@ -1,0 +1,1 @@
+Since exception throws error jvm wont have the generic information during runtime exception normally is not possible
