@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 1: THE REUSABLE DATA WRAPPER (WHY GENERICS)
+================================================================================
+1. THE CLASS:
+   - Create a class named `DataEnvelope<T>`.
+   - Add a private field `data` of type `T`.
+   - Create a constructor to initialize this data.
+   - Create a method `T getContent()` that returns the data.
+
+2. THE IMPLEMENTATION:
+   - In your Main method, instantiate `DataEnvelope<Double>` with a value like 98.6.
+   - Instantiate `DataEnvelope<String>` with a value like "Authorized".
+
+3. THE TEST:
+   - Retrieve the content from both envelopes.
+   - Prove type safety: Try to assign the result of the Double envelope to a
+     String variable and observe the compiler error.
+================================================================================

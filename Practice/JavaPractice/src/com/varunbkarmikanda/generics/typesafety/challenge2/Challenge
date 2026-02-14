@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 2: THE COORDINATE SYSTEM (MULTI-PARAMETER CLASSES)
+================================================================================
+1. THE CLASS:
+   - Create a class `Coordinate<K, V>`.
+   - Define two private fields: `key` of type `K` and `value` of type `V`.
+   - Create a constructor for both.
+
+2. THE METHODS:
+   - Create `K getKey()` and `V getValue()`.
+   - Create a method `swap()` that returns a NEW `Coordinate<V, K>`.
+     (Hint: return new Coordinate<>(this.value, this.key);)
+
+3. THE TEST:
+   - Create a `Coordinate<String, Integer>` representing ("UserID", 5001).
+   - Call `.swap()` on it and store the result.
+   - Print the types/values of the swapped coordinate to ensure they flipped.
+================================================================================
