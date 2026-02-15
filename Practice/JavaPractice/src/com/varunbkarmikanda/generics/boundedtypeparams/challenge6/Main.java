@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.generics.typesafety.challenge6;
+package com.varunbkarmikanda.generics.boundedtypeparams.challenge6;
 
 public class Main {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.generics.typesafety.challenge5;
+package com.varunbkarmikanda.generics.boundedtypeparams.challenge5;
 
 public class DataGuard<T extends Number & Comparable<T>> {
 

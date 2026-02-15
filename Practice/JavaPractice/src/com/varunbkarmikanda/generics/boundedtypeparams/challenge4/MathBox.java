@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.generics.typesafety.challenge4;
+package com.varunbkarmikanda.generics.boundedtypeparams.challenge4;
 
 public class MathBox<T extends Number> {
 
