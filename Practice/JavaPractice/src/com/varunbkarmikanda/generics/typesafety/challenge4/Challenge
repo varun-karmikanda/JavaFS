@@ -1,0 +1,17 @@
+================================================================================
+CHALLENGE 4: THE NUMERIC CALCULATOR (SINGLE BOUNDS)
+================================================================================
+1. THE CLASS:
+   - Create a class `MathBox<T extends Number>`.
+   - Add a private field `T value` and a constructor.
+
+2. THE METHOD:
+   - Create a method `double squareValue()`.
+   - Logic: Return `value.doubleValue() * value.doubleValue()`.
+   (Notice: The compiler allows .doubleValue() ONLY because T extends Number).
+
+3. THE TEST:
+   - In Main, create `MathBox<Integer>` with 10.
+   - Create `MathBox<Double>` with 5.5.
+   - Try creating `MathBox<String>` and note why the IDE shows an error.
+================================================================================

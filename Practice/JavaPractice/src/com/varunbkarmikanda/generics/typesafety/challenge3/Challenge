@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 3: THE UNIVERSAL TRANSFORMER (GENERIC INTERFACES)
+================================================================================
+1. THE INTERFACE:
+   - Create an interface `Transformer<I, O>`.
+   - Define one method: `O transform(I input);`.
+
+2. THE IMPLEMENTATIONS:
+   - CLASS A: `StringLengthCounter` implementing `Transformer<String, Integer>`.
+     (Should return input.length()).
+   - CLASS B: `ListFirstElement<T>` implementing `Transformer<List<T>, T>`.
+     (Should return input.get(0)).
+
+3. THE TEST:
+   - Use `StringLengthCounter` to transform the string "Generics" into an Integer.
+   - Use `ListFirstElement<Double>` to transform a List of [1.1, 2.2, 3.3]
+     into the single Double 1.1.
+================================================================================

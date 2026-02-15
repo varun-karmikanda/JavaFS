@@ -1,0 +1,17 @@
+================================================================================
+CHALLENGE 5: THE SORTABLE DATA (MULTIPLE BOUNDS)
+================================================================================
+1. THE CLASS:
+   - Create a class `DataGuard<T extends Number & Comparable<T>>`.
+   - Add a private field `T value` and a constructor.
+
+2. THE METHOD:
+   - Create a method `boolean isGreaterThan(T other)`.
+   - Logic: Return `this.value.compareTo(other) > 0`.
+
+3. THE TEST:
+   - Create a `DataGuard<Integer>` with 100.
+   - Test it: `guard.isGreaterThan(50)` should return true.
+   - Question: Why can't we use `Number` alone? (Answer: Number doesn't
+     implement Comparable, so you need both bounds).
+================================================================================

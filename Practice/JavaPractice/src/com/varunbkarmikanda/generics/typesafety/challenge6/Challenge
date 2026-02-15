@@ -1,0 +1,17 @@
+================================================================================
+CHALLENGE 6: THE ANY-TYPE LOGGER (GENERIC CONSTRUCTORS)
+================================================================================
+1. THE CLASS:
+   - Create a normal class `LogEntry` (NO <T> on the class name itself).
+   - Add a private String field `message`.
+
+2. THE CONSTRUCTOR:
+   - Create a constructor with its own type parameter:
+     `public <T> LogEntry(T data)`
+   - Logic: `this.message = "LOG [" + data.getClass().getSimpleName() + "]: " + data;`
+
+3. THE TEST:
+   - Create one LogEntry with a `String`, one with `Double`, and one with `Boolean`.
+   - Print the `message` of each.
+   - This proves that constructors can be generic even if the class is not!
+================================================================================
