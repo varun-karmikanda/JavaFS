@@ -1,0 +1,18 @@
+================================================================================
+CHALLENGE 2: THE DATA PRODUCER (UPPER BOUNDED <? extends T>)
+================================================================================
+SCENARIO: You are building a math utility. You want a method that can sum up
+numbers from a list, whether they are Integers, Doubles, or Longs.
+
+1. THE METHOD:
+   - Create a static method `sumOfList(List<? extends Number> list)`.
+   - Initialize a `double total = 0.0`.
+   - Loop through the list and add `n.doubleValue()` to the total.
+   - Return the total.
+
+2. THE TEST:
+   - Create a `List<Integer>` with [1, 2, 3].
+   - Create a `List<Double>` with [1.1, 2.2, 3.3].
+   - Pass both to `sumOfList()` and print the results.
+   - (Why 'extends'? Because the list is PRODUCING numbers for us to read).
+================================================================================

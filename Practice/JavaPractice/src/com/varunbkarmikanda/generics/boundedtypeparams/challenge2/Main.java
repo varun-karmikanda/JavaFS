@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.generics.boundedtypeparams.challenge5;
+package com.varunbkarmikanda.generics.boundedtypeparams.challenge2;
 
 public class Main {
     public static void main(String[] args) {

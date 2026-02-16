@@ -1,4 +1,4 @@
-package com.varunbkarmikanda.generics.boundedtypeparams.challenge6;
+package com.varunbkarmikanda.generics.boundedtypeparams.challenge3;
 
 public class LogEntry {
 

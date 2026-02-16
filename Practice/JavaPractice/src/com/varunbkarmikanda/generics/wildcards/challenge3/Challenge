@@ -1,0 +1,17 @@
+================================================================================
+CHALLENGE 3: THE DATA CONSUMER (LOWER BOUNDED <? super T>)
+================================================================================
+SCENARIO: You need a method that adds Integers into a list. The list
+could be a list of Integers, a list of Numbers, or a list of Objects.
+
+1. THE METHOD:
+   - Create a static method `addNumbers(List<? super Integer> list)`.
+   - Inside, add the numbers 1, 2, and 3 to the list.
+
+2. THE TEST:
+   - Create a `List<Number> myNumbers = new ArrayList<>()`.
+   - Create a `List<Object> myObjects = new ArrayList<>()`.
+   - Pass both to `addNumbers()`.
+   - Print both lists to see the added values.
+   - (Observe: This works because Number and Object are superclasses of Integer).
+================================================================================

@@ -1,0 +1,17 @@
+================================================================================
+CHALLENGE 1: THE UNIVERSAL INSPECTOR (UNBOUNDED WILDCARDS <?>)
+================================================================================
+SCENARIO: You need a utility method that can print any list, regardless of
+what's inside, using only methods available in the Object class.
+
+1. THE METHOD:
+   - Create a static method `printList(List<?> list)`.
+   - Loop through the list and print each element.
+   - Inside the loop, try to add an element to the list (e.g., list.add("test")).
+     Note why the compiler forbids this.
+
+2. THE TEST:
+   - Create a `List<Integer>` and a `List<String>`.
+   - Pass both into `printList()`.
+   - Observe how one method handles both completely different types.
+================================================================================
